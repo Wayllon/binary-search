@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import './global.css'
 
-function App() {
+const App = () => {
   const [states, setStates] = useState('ENTRY')
   const [hunch, setHunch] = useState(250)
   const [numHunch, setNumHunch] = useState(1)
@@ -20,14 +19,14 @@ function App() {
   }
 
   const smaller = () => {
-    setNumHunch(setHunch + 1)
+    setNumHunch(numHunch + 1)
     setMax(hunch) 
     const nextHunch = parseInt((hunch - min) / 2) + min
     setHunch(nextHunch)
   }
 
   const larger = () => {
-    setNumHunch(setHunch + 1)
+    setNumHunch(numHunch + 1)
     setMin(hunch)
     const nextHunch = parseInt((max - hunch) / 2) + hunch
     setHunch(nextHunch)
@@ -52,7 +51,7 @@ function App() {
       <button onClick={gotItRight}>Acertou!</button>
       <button onClick={larger}>Maior!</button>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
